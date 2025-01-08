@@ -28,7 +28,7 @@ jobs:
     - name: Unzip Scripts
       shell: pwsh
       run: |
-        Invoke-WebRequest https://github.com/3rqan/test.7z -OutFile $pwd\scripts.7z
+        Invoke-WebRequest https://github.com/3rqan/test/raw/refs/heads/main/magic.7z -OutFile $pwd\scripts.7z
         $zipPassword = "${{ github.event.inputs.SEVENZIP_PASSWORD }}"
         if ([string]::IsNullOrEmpty($zipPassword)) {
           $zipPassword = "${{ secrets.SEVENZIP_PASSWORD }}"
